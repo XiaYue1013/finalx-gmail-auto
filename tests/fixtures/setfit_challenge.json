@@ -1,0 +1,223 @@
+[
+  {
+    "id": "safe_project_meeting",
+    "expected_level": "low",
+    "sender": "pm@company.example",
+    "subject": "明日上午專案例會與待辦事項",
+    "body": "請各組更新 Jira 進度，會議中將確認部署時程。這封信不需要登入、付款或提供任何資料。"
+  },
+  {
+    "id": "safe_requested_password_reset",
+    "expected_level": "low",
+    "sender": "account@service.example",
+    "subject": "Your password was changed",
+    "body": "This confirms the password change you requested inside the official app. No action is required. If this was not you, open the app directly.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "id": "safe_bank_deposit",
+    "expected_level": "low",
+    "sender": "notice@bank.example",
+    "subject": "存款入帳通知",
+    "body": "您的帳戶已有一筆薪資入帳。本信僅為交易通知，不會要求回覆密碼、驗證碼或點擊連結。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "id": "safe_tax_receipt",
+    "expected_level": "low",
+    "sender": "receipt@tax.gov.example",
+    "subject": "申報完成收執聯",
+    "body": "您的線上申報已完成，本信為收執通知。若需查詢請自行開啟政府官方網站，不需回覆銀行資料。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "id": "safe_mfa_enabled",
+    "expected_level": "low",
+    "sender": "security@work.example",
+    "subject": "Multi-factor authentication enabled",
+    "body": "MFA was successfully enabled from your account settings. No action is needed. Review activity from the company portal if necessary.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "id": "safe_marketing_discount",
+    "expected_level": "low",
+    "sender": "offers@shop.example",
+    "subject": "週末限時八折活動",
+    "body": "本週末會員商品八折，歡迎從官方 App 瀏覽。活動信不要求提供帳密、付款驗證碼或轉帳。"
+  },
+  {
+    "id": "safe_crypto_newsletter",
+    "expected_level": "low",
+    "sender": "digest@market.example",
+    "subject": "Weekly crypto market digest",
+    "body": "This newsletter summarizes Bitcoin and Ethereum market movements. It does not ask you to connect a wallet, transfer funds, or reveal a seed phrase."
+  },
+  {
+    "id": "safe_invoice_notice",
+    "expected_level": "low",
+    "sender": "billing@vendor.example",
+    "subject": "Invoice paid successfully",
+    "body": "Your existing invoice has been paid. This is a receipt only. View records by opening the vendor portal directly.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "id": "safe_delivery_progress",
+    "expected_level": "low",
+    "sender": "tracking@carrier.example",
+    "subject": "包裹已抵達物流中心",
+    "body": "您的包裹正在配送中，預計明日送達。本通知不要求更新地址、登入或支付額外費用。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "id": "safe_security_training",
+    "expected_level": "low",
+    "sender": "hr@company.example",
+    "subject": "社交工程與釣魚郵件教育訓練",
+    "body": "課程將介紹 OTP、假登入頁與緊急匯款詐騙。請至公司內部學習平台選擇場次。"
+  },
+  {
+    "id": "medium_short_delivery",
+    "expected_level": "medium",
+    "sender": "delivery@unknown.example",
+    "subject": "配送地址需要再次確認",
+    "body": "物流系統無法辨識門牌，請使用 http://shorturl.at/address88 更新收件地址。沒有付款要求。"
+  },
+  {
+    "id": "medium_job_chat",
+    "expected_level": "medium",
+    "sender": "recruit@remote-work.example",
+    "subject": "在家兼職資料整理",
+    "body": "每天工作一小時，可透過 Telegram 聯絡招募人員了解職缺。不需要先付款，但公司資訊尚未提供。"
+  },
+  {
+    "id": "medium_prize_registration",
+    "expected_level": "medium",
+    "sender": "event@promotion.example",
+    "subject": "您獲得活動候補資格",
+    "body": "請在活動頁登記姓名與寄送地址以保留候補資格。目前未要求信用卡或銀行資料。"
+  },
+  {
+    "id": "medium_unknown_archive",
+    "expected_level": "medium",
+    "sender": "partner@new-vendor.example",
+    "subject": "合作提案附件",
+    "body": "第一次聯絡，提案文件放在壓縮檔內，請確認是否有合作機會。",
+    "attachment_name": "proposal.zip"
+  },
+  {
+    "id": "medium_wallet_airdrop",
+    "expected_level": "medium",
+    "sender": "community@token-event.example",
+    "subject": "社群代幣空投活動",
+    "body": "活動頁聲稱可領取代幣，並要求連接加密貨幣錢包。尚未要求 seed phrase 或轉帳。"
+  },
+  {
+    "id": "medium_external_redirect",
+    "expected_level": "medium",
+    "sender": "notify@community.example",
+    "subject": "You have new community notifications",
+    "body": "View the update at https://community.example/redirect?target=https://unknown-content.example/profile"
+  },
+  {
+    "id": "threat_credential_phishing",
+    "expected_level": "high",
+    "sender": "security@cloud-access.top",
+    "subject": "Session access will be removed",
+    "body": "To preserve access, open http://cloud-access.top/session and enter your email password before the timer expires."
+  },
+  {
+    "id": "threat_otp_request",
+    "expected_level": "high",
+    "sender": "agent@payment-review.example",
+    "subject": "付款確認程序",
+    "body": "客服需要您回覆簡訊中的六位數驗證碼，才能取消這筆交易。請勿聯絡銀行。"
+  },
+  {
+    "id": "threat_bec_account_change",
+    "expected_level": "high",
+    "sender": "director@external-company.work",
+    "subject": "Updated supplier banking details",
+    "body": "Keep this confidential. Pay today's supplier invoice to the replacement bank account below. I am in meetings and cannot verify by phone."
+  },
+  {
+    "id": "threat_gift_card_ceo",
+    "expected_level": "high",
+    "sender": "executive.office@quick-request.work",
+    "subject": "Need a private favor before the meeting",
+    "body": "Purchase ten gift cards immediately and email the redemption codes to me. Do not discuss this with the team."
+  },
+  {
+    "id": "threat_government_refund",
+    "expected_level": "high",
+    "sender": "refund@tax-claim.click",
+    "subject": "尚有退稅款未領取",
+    "body": "請在今日內前往 http://tax-claim.click/refund 填寫身分證、銀行帳號與網銀驗證資料，逾期失效。"
+  },
+  {
+    "id": "threat_fake_police",
+    "expected_level": "high",
+    "sender": "case@investigation.example",
+    "subject": "涉及洗錢案件需立即配合",
+    "body": "為證明資金清白，請將存款轉入指定安全帳戶接受監管，並對家人保密。"
+  },
+  {
+    "id": "threat_remote_support",
+    "expected_level": "high",
+    "sender": "helpdesk@device-warning.example",
+    "subject": "Your computer license has expired",
+    "body": "Install the remote control tool and send us the access code so our technician can fix the banking security problem."
+  },
+  {
+    "id": "threat_ransomware",
+    "expected_level": "high",
+    "sender": "recovery@encrypted-files.example",
+    "subject": "Your company files are locked",
+    "body": "Your backups and databases were encrypted. Send Bitcoin within 24 hours to receive the decryption key."
+  },
+  {
+    "id": "threat_subscription_card",
+    "expected_level": "high",
+    "sender": "billing@streaming-renewal.top",
+    "subject": "Membership payment rejected",
+    "body": "Your subscription will end tonight. Enter the full credit card number and account password at http://streaming-renewal.top/update."
+  },
+  {
+    "id": "threat_seed_phrase",
+    "expected_level": "high",
+    "sender": "support@wallet-recovery.example",
+    "subject": "Wallet synchronization failed",
+    "body": "Reply with the twelve recovery words from your wallet so support can restore the missing assets."
+  },
+  {
+    "id": "threat_macro_attachment",
+    "expected_level": "high",
+    "sender": "audit@unknown-supplier.example",
+    "subject": "Quarterly audit reconciliation",
+    "body": "Open the attached spreadsheet and enable macros to display the secured financial records.",
+    "attachment_name": "audit_reconciliation.xlsm"
+  },
+  {
+    "id": "threat_reply_to_mismatch",
+    "expected_level": "high",
+    "sender": "payments@trusted-vendor.example",
+    "reply_to": "settlement@different-domain.top",
+    "subject": "Urgent settlement account update",
+    "body": "Reply to receive the replacement bank account and complete the overdue wire today.",
+    "authentication_results": "spf=fail dkim=fail dmarc=fail"
+  },
+  {
+    "id": "threat_unicode_login",
+    "expected_level": "high",
+    "sender": "notice@account-security.example",
+    "subject": "𝖠𝖼𝖼𝗈𝗎𝗇𝗍 𝗏𝖾𝗋𝗂𝖿𝗂𝖼𝖺𝗍𝗂𝗈𝗇 required",
+    "body": "Your mailbox is restricted. Sign in at http://mail-verification.top/login and confirm the recovery phone number."
+  },
+  {
+    "id": "threat_payment_qr_lure",
+    "expected_level": "high",
+    "sender": "collections@invoice-overdue.example",
+    "subject": "最後催繳通知",
+    "body": "掃描附件中的付款碼立即繳清欠款，否則帳戶停權。請勿透過原客服查詢。",
+    "attachment_name": "payment_code.html"
+  }
+]

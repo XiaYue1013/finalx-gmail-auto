@@ -1,0 +1,446 @@
+[
+  {
+    "label": "legitimate",
+    "sender": "calendar@company.example",
+    "subject": "Updated meeting room for tomorrow",
+    "body": "The architecture review will start at 10:00 in room B. Please bring the latest project notes."
+  },
+  {
+    "label": "legitimate",
+    "sender": "payroll@company.example",
+    "subject": "本月薪資已入帳",
+    "body": "薪資已依原設定匯入您的帳戶。本信不要求回覆銀行資訊或點擊付款連結。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "alerts@banking.example",
+    "subject": "信用卡消費通知",
+    "body": "您的信用卡完成一筆一般消費。本通知不含登入連結；如有疑問請自行開啟銀行 App。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "security@software.example",
+    "subject": "A new device was approved",
+    "body": "You approved a new device from the official application. No response, password, or verification code is requested.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "account@work.example",
+    "subject": "Password reset completed",
+    "body": "This message confirms the password reset initiated from your company portal. If needed, contact the internal help desk using the directory.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "identity@service.example",
+    "subject": "MFA registration complete",
+    "body": "Your authenticator was registered successfully. This receipt does not ask you to sign in or provide a one-time code.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "tracking@carrier.example",
+    "subject": "配送進度更新",
+    "body": "貨件已離開轉運中心，預計週五送達。不需更新地址或支付其他費用。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "receipt@store.example",
+    "subject": "訂單付款完成收據",
+    "body": "感謝您的購買，款項已完成。本信僅提供收據，不要求再次輸入信用卡資訊。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "newsletter@investing.example",
+    "subject": "本週市場與加密貨幣觀察",
+    "body": "內容整理股票、Bitcoin 與總體經濟新聞，不提供保證獲利，也不要求連接錢包或轉帳。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "education@company.example",
+    "subject": "資安課程：辨識假客服與 OTP 詐騙",
+    "body": "教育訓練會示範釣魚信常見的密碼、驗證碼與緊急匯款話術。請從內部學習系統報名。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "events@brand.example",
+    "subject": "會員週年慶優惠",
+    "body": "會員可在官方門市與 App 使用優惠券。本活動不會要求提供帳號密碼或透過私人帳號付款。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "tax@government.example",
+    "subject": "電子申報收件確認",
+    "body": "系統已收到您的申報資料。本通知不要求填寫銀行帳號；查詢請自行進入政府入口網站。",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "devops@company.example",
+    "subject": "Production deployment finished",
+    "body": "The release completed successfully. Logs and rollback notes are available in the internal repository."
+  },
+  {
+    "label": "legitimate",
+    "sender": "support@vendor.example",
+    "subject": "Ticket closed: login issue",
+    "body": "The login issue you reported has been resolved. We will never ask for your password or remote access code by email.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "legitimate",
+    "sender": "billing@cloud.example",
+    "subject": "Monthly cloud invoice available",
+    "body": "Your regular invoice is available in the cloud console. Open the console directly; no payment details are requested in this email.",
+    "authentication_results": "spf=pass dkim=pass dmarc=pass"
+  },
+  {
+    "label": "suspicious",
+    "sender": "dispatch@new-carrier.example",
+    "subject": "收件資料無法辨識",
+    "body": "請使用縮短網址重新填寫門牌資訊，信件沒有說明承運公司或客服來源。 http://shorturl.at/door22"
+  },
+  {
+    "label": "suspicious",
+    "sender": "jobs@flexible-income.example",
+    "subject": "每天一小時的遠端工作",
+    "body": "職缺內容不完整，要求改用 WhatsApp 與招募人員聯絡，目前沒有要求付款。"
+  },
+  {
+    "label": "suspicious",
+    "sender": "selection@campaign.example",
+    "subject": "活動入選通知",
+    "body": "主辦方要求在陌生活動頁留下姓名、電話與寄送地址，但尚未要求金融資料。"
+  },
+  {
+    "label": "suspicious",
+    "sender": "proposal@unknown-studio.example",
+    "subject": "設計合作資料",
+    "body": "陌生合作方寄來壓縮檔，表示內含報價與圖片，未提供可核對的公司網站。",
+    "attachment_name": "design_materials.zip"
+  },
+  {
+    "label": "suspicious",
+    "sender": "community@web3-event.example",
+    "subject": "Early token reward",
+    "body": "The campaign asks visitors to connect a browser wallet to check eligibility. It does not request recovery words or an upfront transfer."
+  },
+  {
+    "label": "suspicious",
+    "sender": "notice@social-feed.example",
+    "subject": "New profile activity",
+    "body": "The button uses a tracking redirect that sends the reader to a different organization. https://social-feed.example/go?url=https://third-party.example/post"
+  },
+  {
+    "label": "suspicious",
+    "sender": "sales@unverified-vendor.example",
+    "subject": "首次合作付款條件",
+    "body": "陌生供應商提供新付款條件，要求先以電子郵件確認，但尚未提供銀行帳號或要求立即匯款。"
+  },
+  {
+    "label": "suspicious",
+    "sender": "member@reward-event.example",
+    "subject": "Limited reward reservation",
+    "body": "Reserve a promotional item by registering contact and shipping details on an unfamiliar campaign page. No card information is requested."
+  },
+  {
+    "label": "suspicious",
+    "sender": "download@document-share.example",
+    "subject": "文件等待檢視",
+    "body": "陌生寄件者要求下載 HTML 檔查看文件，但信件沒有帳密或付款要求。",
+    "attachment_name": "shared_document.html"
+  },
+  {
+    "label": "suspicious",
+    "sender": "recruiter@part-time.example",
+    "subject": "App review assistant opportunity",
+    "body": "The offer promises flexible weekly income and asks the applicant to continue the conversation on Telegram. No deposit is mentioned yet."
+  },
+  {
+    "label": "suspicious",
+    "sender": "parcel@address-review.example",
+    "subject": "包裹地址待確認",
+    "body": "通知要求透過非官方頁面補充地址，但沒有要求付款、信用卡或帳戶登入。"
+  },
+  {
+    "label": "suspicious",
+    "sender": "promo@lucky-entry.example",
+    "subject": "抽獎候補名額",
+    "body": "活動稱您被抽中候補資格，需要先登記收件資料，尚未出現保證金或運費要求。"
+  },
+  {
+    "label": "suspicious",
+    "sender": "files@freelancer.example",
+    "subject": "Project timeline archive",
+    "body": "A first-time contact shares a compressed archive and asks for review. The sender identity has not been verified.",
+    "attachment_name": "timeline.7z"
+  },
+  {
+    "label": "suspicious",
+    "sender": "club@digital-assets.example",
+    "subject": "NFT community access",
+    "body": "The page asks users to connect a wallet to view membership status, but does not request a seed phrase or token transfer."
+  },
+  {
+    "label": "suspicious",
+    "sender": "notify@external-community.example",
+    "subject": "Unread discussion replies",
+    "body": "A redirect link points from the notification service to an unrelated content host. https://external-community.example/r?to=https://content-host.example/thread"
+  },
+  {
+    "label": "suspicious",
+    "sender": "survey@unknown-research.example",
+    "subject": "Customer survey invitation",
+    "body": "The survey requests name, mobile number, and home address from an organization the recipient does not recognize."
+  },
+  {
+    "label": "suspicious",
+    "sender": "documents@new-accounting.example",
+    "subject": "年度帳務資料",
+    "body": "新會計公司寄送需要下載的壓縮資料，但未要求啟用巨集、登入或付款。",
+    "attachment_name": "annual_records.rar"
+  },
+  {
+    "label": "suspicious",
+    "sender": "career@quick-hire.example",
+    "subject": "Immediate online interview",
+    "body": "The recruiter uses a newly created domain and asks to move the interview to a private chat account. No fee is requested."
+  },
+  {
+    "label": "suspicious",
+    "sender": "giveaway@fan-community.example",
+    "subject": "Fan merchandise registration",
+    "body": "The sender says a free item is available after entering delivery information on an unofficial page."
+  },
+  {
+    "label": "suspicious",
+    "sender": "wallet@token-preview.example",
+    "subject": "Preview your token allocation",
+    "body": "Users are asked to connect a wallet to preview an allocation. The message does not ask for recovery words or payment."
+  },
+  {
+    "label": "suspicious",
+    "sender": "contract@new-partner.example",
+    "subject": "Draft agreement download",
+    "body": "A new business contact provides an HTML download instead of a normal document. No credentials are requested.",
+    "attachment_name": "agreement.html"
+  },
+  {
+    "label": "suspicious",
+    "sender": "logistics@unknown-dispatch.example",
+    "subject": "需要補充配送說明",
+    "body": "信件導向陌生網域填寫地址備註，但沒有費用、登入或敏感資料要求。"
+  },
+  {
+    "label": "suspicious",
+    "sender": "hiring@microtask.example",
+    "subject": "Flexible product feedback role",
+    "body": "The position promises easy weekly earnings and uses an instant messaging account instead of a company application page."
+  },
+  {
+    "label": "suspicious",
+    "sender": "event@unverified-promotion.example",
+    "subject": "Reward eligibility check",
+    "body": "An unfamiliar event page requests contact information to check eligibility but does not request financial data."
+  },
+  {
+    "label": "suspicious",
+    "sender": "share@unknown-files.example",
+    "subject": "New shared archive",
+    "body": "The sender is unknown and asks the recipient to inspect a compressed project archive.",
+    "attachment_name": "project_assets.zip"
+  },
+  {
+    "label": "threat",
+    "sender": "admin@mailbox-restore.top",
+    "subject": "Mailbox access expires today",
+    "body": "Sign in at http://mailbox-restore.top/auth and enter your company email password to keep receiving messages."
+  },
+  {
+    "label": "threat",
+    "sender": "review@transaction-agent.example",
+    "subject": "取消付款需要驗證",
+    "body": "請直接回覆銀行簡訊中的動態驗證碼，客服才能替您取消交易。不要致電原銀行客服。"
+  },
+  {
+    "label": "threat",
+    "sender": "owner@confidential-deal.work",
+    "subject": "New account for today's vendor payment",
+    "body": "Use the replacement banking details for today's transfer. I am unavailable by phone. Keep the acquisition confidential."
+  },
+  {
+    "label": "threat",
+    "sender": "boss@private-task.work",
+    "subject": "Quick purchase needed",
+    "body": "Buy several prepaid gift cards now and send photographs of every redemption code. Do not tell accounting."
+  },
+  {
+    "label": "threat",
+    "sender": "claim@revenue-refund.click",
+    "subject": "退稅申請即將截止",
+    "body": "請開啟 http://revenue-refund.click/claim 填寫身分資料、銀行帳戶與網銀密碼，今天未完成就失效。"
+  },
+  {
+    "label": "threat",
+    "sender": "officer@financial-case.example",
+    "subject": "司法調查資金驗證",
+    "body": "案件涉及非法資金，請將全部存款匯至監管帳戶以證明清白，期間不得告知家人或銀行。"
+  },
+  {
+    "label": "threat",
+    "sender": "technician@urgent-device-help.example",
+    "subject": "Critical banking malware detected",
+    "body": "Install our remote desktop program and send the connection PIN so the technician can access your computer and remove the threat."
+  },
+  {
+    "label": "threat",
+    "sender": "unlock@data-recovery.example",
+    "subject": "Backups encrypted",
+    "body": "We encrypted the server backups. Transfer cryptocurrency before the deadline or the private files will be published."
+  },
+  {
+    "label": "threat",
+    "sender": "renewal@video-membership.top",
+    "subject": "Service ends at midnight",
+    "body": "Confirm your account password and full card details at http://video-membership.top/billing to prevent immediate termination."
+  },
+  {
+    "label": "threat",
+    "sender": "recovery@crypto-wallet.example",
+    "subject": "Assets cannot be synchronized",
+    "body": "Send support the twelve or twenty-four secret recovery words so the wallet balance can be restored."
+  },
+  {
+    "label": "threat",
+    "sender": "compliance@unknown-audit.example",
+    "subject": "Protected audit workbook",
+    "body": "Open the attached workbook and enable VBA content to decrypt the compliance figures.",
+    "attachment_name": "protected_audit.xlsm"
+  },
+  {
+    "label": "threat",
+    "sender": "account@identity-confirm.top",
+    "subject": "Additional verification is mandatory",
+    "body": "Enter your current password and security code at http://identity-confirm.top/verify or the profile will be disabled."
+  },
+  {
+    "label": "threat",
+    "sender": "collections@late-payment.example",
+    "subject": "欠款最後處理期限",
+    "body": "立即掃描付款頁並繳清費用，否則服務停用。信件要求不要聯絡原客服。",
+    "attachment_name": "quick_payment.html"
+  },
+  {
+    "label": "threat",
+    "sender": "support@exchange-recovery.example",
+    "subject": "Exchange withdrawal blocked",
+    "body": "To release the withdrawal, transfer a verification deposit and provide the SMS code sent by your bank."
+  },
+  {
+    "label": "threat",
+    "sender": "delivery@parcel-charge.top",
+    "subject": "重新配送費尚未支付",
+    "body": "請立即在 http://parcel-charge.top/card 輸入信用卡資料支付小額運費，否則包裹銷毀。"
+  },
+  {
+    "label": "threat",
+    "sender": "hr@paid-training-job.example",
+    "subject": "Remote assistant onboarding",
+    "body": "The job requires an upfront training deposit paid in cryptocurrency before the first assignment."
+  },
+  {
+    "label": "threat",
+    "sender": "bonus@celebrity-fans.top",
+    "subject": "Creator giveaway winner",
+    "body": "Pay a handling fee and enter card details to receive the celebrity giveaway prize before the timer reaches zero."
+  },
+  {
+    "label": "threat",
+    "sender": "security@social-restore.top",
+    "subject": "Account appeal accepted",
+    "body": "Restore the suspended social account by entering the password and one-time code at http://social-restore.top/login."
+  },
+  {
+    "label": "threat",
+    "sender": "invoice@changed-bank.work",
+    "subject": "Remit outstanding invoice to new beneficiary",
+    "body": "The old bank account is unavailable. Send the overdue payment to this new beneficiary today and do not call the usual contact."
+  },
+  {
+    "label": "threat",
+    "sender": "invest@guaranteed-return.example",
+    "subject": "Guaranteed daily profit",
+    "body": "Deposit funds now for guaranteed returns with no risk. A private mentor will tell you when to withdraw."
+  },
+  {
+    "label": "threat",
+    "sender": "help@phone-security.example",
+    "subject": "手機遭駭客控制",
+    "body": "下載遠端控制 App 並把連線代碼傳給客服，否則銀行帳戶可能被清空。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "scrum@company.example",
+    "subject": "Sprint planning agenda",
+    "body": "The engineering team will review the backlog, assign owners, and confirm the release calendar during Monday's planning session."
+  },
+  {
+    "label": "legitimate",
+    "sender": "operations@company.example",
+    "subject": "每週營運會議紀錄",
+    "body": "附件摘要本週專案進度與下週工作分配，請各部門在例會前更新內部看板。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "workspace@company.example",
+    "subject": "Conference room reservation confirmed",
+    "body": "Room C has been reserved for the design review. The calendar invitation contains the time and attendee list."
+  },
+  {
+    "label": "legitimate",
+    "sender": "loyalty@retailer.example",
+    "subject": "會員專屬夏季優惠券",
+    "body": "本月會員可在實體門市或官方購物 App 使用折價券，結帳時由系統自動套用。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "news@bookstore.example",
+    "subject": "New releases and weekend savings",
+    "body": "Browse this week's new books and store promotions. Purchases can be made through the official website or retail locations."
+  },
+  {
+    "label": "legitimate",
+    "sender": "events@shopping-center.example",
+    "subject": "週末品牌活動時間表",
+    "body": "活動包含新品展示、會員贈品與現場折扣，完整場次可從購物中心官方 App 查詢。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "membership@store.example",
+    "subject": "Your reward points expire next month",
+    "body": "Reward points may be redeemed during checkout in the official application. This notice does not request a password or bank transfer."
+  },
+  {
+    "label": "legitimate",
+    "sender": "newsletter@travel.example",
+    "subject": "暑期旅遊靈感與訂房優惠",
+    "body": "電子報整理熱門景點、航班資訊與會員方案，請透過官方網站或 App 自行瀏覽行程。"
+  },
+  {
+    "label": "legitimate",
+    "sender": "training@company.example",
+    "subject": "Internal workshop registration confirmed",
+    "body": "Your seat for the project management workshop is confirmed. Materials will be available on the internal learning portal."
+  },
+  {
+    "label": "legitimate",
+    "sender": "reports@company.example",
+    "subject": "Quarterly dashboard is ready",
+    "body": "The approved performance dashboard is now available in the internal analytics workspace for the scheduled business review."
+  }
+]
