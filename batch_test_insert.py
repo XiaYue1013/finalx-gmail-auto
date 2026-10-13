@@ -28,7 +28,7 @@ TEST_EMAILS = [
     {
         "id": 1,
         "type": "安全 (Low Risk)",
-        "sender": "newsletter@techtrends.example.test",
+        "sender": "newsletter@techtrends.xiayue.tw",
         "subject": "週五技術快報：AI 領域的最新進展與工具推薦",
         "body": """
         <html>
@@ -45,7 +45,7 @@ TEST_EMAILS = [
     {
         "id": 2,
         "type": "高風險 (High Risk - 釣魚連結)",
-        "sender": "security@bank-verify.example.test",
+        "sender": "security@bank-verify.xiayue.tw",
         "subject": "🚨 [重要安全通報] 您的網路銀行帳戶已被暫時限制登入",
         "body": """
         <html>
@@ -62,7 +62,7 @@ TEST_EMAILS = [
     {
         "id": 3,
         "type": "中風險 (Medium Risk - 可疑地址)",
-        "sender": "support@shipping-update.example.test",
+        "sender": "support@shipping-update.xiayue.tw",
         "subject": "包裹配送失敗通知，請確認您的收件地址",
         "body": """
         <html>
@@ -79,7 +79,7 @@ TEST_EMAILS = [
     {
         "id": 4,
         "type": "安全 (Low Risk)",
-        "sender": "hr@example.test",
+        "sender": "hr@xiayue.tw",
         "subject": "【重要通知】2026年第三季員工教育訓練課程報名開始",
         "body": """
         <html>
@@ -96,7 +96,7 @@ TEST_EMAILS = [
     {
         "id": 5,
         "type": "高風險 (High Risk - 惡意執行檔)",
-        "sender": "finance-dept@example.test",
+        "sender": "finance-dept@xiayue.tw",
         "subject": "Urgent: Q2 Employee Bonus list & payout scheme",
         "body": """
         <html>
@@ -113,7 +113,7 @@ TEST_EMAILS = [
     {
         "id": 6,
         "type": "安全 (Low Risk)",
-        "sender": "colleague-tim@example.test",
+        "sender": "colleague-tim@xiayue.tw",
         "subject": "下週一專案進度討論會的會議紀錄",
         "body": """
         <html>
@@ -132,7 +132,7 @@ TEST_EMAILS = [
     {
         "id": 7,
         "type": "高風險 (High Risk - 偽造發信與 ReplyTo 異常)",
-        "sender": "service@paypal.com.example.test",
+        "sender": "service@paypal.com.xiayue.tw",
         "reply_to": "hacker-mailbox@gmail.com",
         "subject": "Your payment of $799.00 USD to Steam Games was successful",
         "body": """
@@ -141,7 +141,7 @@ TEST_EMAILS = [
             <h2>PayPal Transaction Confirmation</h2>
             <p>Thank you for your purchase. We have authorized a payment of $799.00 USD to Steam Games from your account.</p>
             <p>If you did not authorize this transaction, please reply immediately or click the link below to cancel the transaction and claim a refund:</p>
-            <p><a href="http://login-paypal-verify-account.example.test/dispute">Cancel Transaction & Refund</a></p>
+            <p><a href="http://login-paypal-verify-account.xiayue.tw/dispute">Cancel Transaction & Refund</a></p>
         </body>
         </html>
         """
@@ -149,7 +149,7 @@ TEST_EMAILS = [
     {
         "id": 8,
         "type": "中風險 (Medium Risk - 行銷與急迫性用詞)",
-        "sender": "marketing@promo-sales.example.test",
+        "sender": "marketing@promo-sales.xiayue.tw",
         "subject": "🔥 僅限今日！全站商品 1 折起，限時特賣錯過不再！",
         "body": """
         <html>
@@ -164,7 +164,7 @@ TEST_EMAILS = [
     {
         "id": 9,
         "type": "安全 (Low Risk)",
-        "sender": "system-notify@example.test",
+        "sender": "system-notify@xiayue.tw",
         "subject": "[GitLab] Pipeline #109485 passed for branch 'main'",
         "body": """
         <html>
@@ -181,7 +181,7 @@ TEST_EMAILS = [
     {
         "id": 10,
         "type": "高風險 (High Risk - 危險指令碼附件)",
-        "sender": "it-support@example.test",
+        "sender": "it-support@xiayue.tw",
         "subject": "【緊急通知】請儘速執行系統安全性漏洞修補程式",
         "body": """
         <html>

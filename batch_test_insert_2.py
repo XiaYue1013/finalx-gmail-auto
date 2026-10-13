@@ -22,7 +22,7 @@ TEST_EMAILS_2 = [
     {
         "id": 1,
         "type": "高風險 (High Risk - 品牌仿冒與相似網域)",
-        "sender": "accounts@g00gle.support.example.test",
+        "sender": "accounts@g00gle.support.xiayue.tw",
         "subject": "Critical security alert: Unauthorized password change attempt detected",
         "body": """
         <html>
@@ -41,7 +41,7 @@ TEST_EMAILS_2 = [
     {
         "id": 2,
         "type": "中風險 (Medium Risk - 行銷垃圾郵件與追蹤像素)",
-        "sender": "sales@amazingdeals.example.test",
+        "sender": "sales@amazingdeals.xiayue.tw",
         "subject": "Congratulations! You won a brand new iPhone 17 Pro Max!",
         "body": """
         <html>
@@ -50,7 +50,7 @@ TEST_EMAILS_2 = [
             <p>You have been randomly selected as our grand prize winner of the day!</p>
             <p>Claim your reward now by registering your shipping details here: <a href="http://winner-claims.com/iphone">Claim Reward</a></p>
             <!-- 隱形追蹤像素測試 -->
-            <img src="http://amazingdeals.example.test/track/pixel.gif?id=123" width="1" height="1" style="display:none;" />
+            <img src="http://amazingdeals.xiayue.tw/track/pixel.gif?id=123" width="1" height="1" style="display:none;" />
         </body>
         </html>
         """
@@ -78,7 +78,7 @@ TEST_EMAILS_2 = [
     {
         "id": 4,
         "type": "高風險 (High Risk - 雙重副檔名 / 偽裝成 PDF 的快捷方式)",
-        "sender": "legal-notice@example.test",
+        "sender": "legal-notice@xiayue.tw",
         "subject": "NOTICE: Immediate copyright infringement cease and desist",
         "body": """
         <html>
@@ -95,7 +95,7 @@ TEST_EMAILS_2 = [
     {
         "id": 5,
         "type": "中風險 (Medium Risk - 高風險 TLD zip 網域)",
-        "sender": "freelance@work.example.test",
+        "sender": "freelance@work.xiayue.tw",
         "subject": "Project Proposal details for review",
         "body": """
         <html>
@@ -112,7 +112,7 @@ TEST_EMAILS_2 = [
     {
         "id": 6,
         "type": "安全 (Low Risk)",
-        "sender": "colleague-lisa@example.test",
+        "sender": "colleague-lisa@xiayue.tw",
         "subject": "Invitation: Project FinalX Architecture Review @ Mon Jun 15",
         "body": """
         <html>
@@ -164,7 +164,7 @@ TEST_EMAILS_2 = [
     {
         "id": 9,
         "type": "高風險 (High Risk - 表單與網頁付款釣魚)",
-        "sender": "verification@netflix-update.example.test",
+        "sender": "verification@netflix-update.xiayue.tw",
         "subject": "Update your Netflix billing information to avoid account suspension",
         "body": """
         <html>
@@ -172,7 +172,7 @@ TEST_EMAILS_2 = [
             <h3>Netflix Account Update</h3>
             <p>We were unable to process your monthly membership payment. To continue enjoying Netflix, please update your credit card details immediately.</p>
             <p>Verify your details directly at our secure portal:</p>
-            <p><a href="https://netflix-payment-update.example.test/login" style="background-color: #e50914; color: white; padding: 10px 15px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block;">Update Payment Method</a></p>
+            <p><a href="https://netflix-payment-update.xiayue.tw/login" style="background-color: #e50914; color: white; padding: 10px 15px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block;">Update Payment Method</a></p>
             <p>Failure to update your payment information will result in immediate termination of your subscription.</p>
         </body>
         </html>
@@ -181,7 +181,7 @@ TEST_EMAILS_2 = [
     {
         "id": 10,
         "type": "中風險 (Medium Risk - 加密貨幣空投與行銷詐騙)",
-        "sender": "airdrops@solana-giveaway.example.test",
+        "sender": "airdrops@solana-giveaway.xiayue.tw",
         "subject": "Claim your $500 SOL Airdrop instantly before it expires!",
         "body": """
         <html>

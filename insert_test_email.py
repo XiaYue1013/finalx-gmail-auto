@@ -82,7 +82,7 @@ def main():
 
     choice = input("\n請輸入選項 (1-4): ").strip()
 
-    sender = "no-reply@test-mail.example.test"
+    sender = "no-reply@test-mail.xiayue.tw"
     to = my_email
     attachment_name = None
     attachment_content = b""

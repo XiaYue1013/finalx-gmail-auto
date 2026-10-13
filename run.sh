@@ -7,7 +7,7 @@ PYTEST="$ROOT_DIR/.venv/bin/pytest"
 UVICORN="$ROOT_DIR/.venv/bin/uvicorn"
 
 if [ ! -x "$PYTHON" ]; then
-  echo "找不到 $PYTHON，請先在 FINALX_GMAIL_AUTO 建立 .venv 並安裝 requirements.txt。"
+  echo "找不到 $PYTHON，請先在專案目錄建立 .venv 並安裝 requirements.txt。"
   exit 1
 fi
 
@@ -125,7 +125,7 @@ case "${1:-auto}" in
     ;;
   help|*)
     cat <<'USAGE'
-FINALX_GMAIL_AUTO independent runner
+Inbox Sentry command runner
 
 Usage:
   ./run.sh               啟動 Gmail Push webhook API

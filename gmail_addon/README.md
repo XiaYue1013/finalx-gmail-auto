@@ -1,4 +1,4 @@
-# Gmail Add-on 範本
+# Inbox Sentry Gmail Add-on
 
 這個目錄提供 Google Apps Script Gmail Add-on 範本，讓使用者在 Gmail 右側欄對目前郵件送出人工標註。
 
@@ -18,7 +18,7 @@ FINALX_API_TOKEN=你在後端 .env 設定的 API_TOKEN
 
 ## 功能
 
-- 在 Gmail 郵件右側欄顯示 FINALX 操作卡。
+- 在 Gmail 郵件右側欄顯示 Inbox Sentry 操作卡。
 - 會把目前郵件的寄件者、主旨與純文字內容送到 `/api/analyze-text`，顯示即時風險分數、原因與摘要。
 - 支援送出 `false_positive`、`confirmed_threat`、`false_negative`。
 - 標註會寫入 `/api/feedback`，預設進入 Dashboard 待審核。

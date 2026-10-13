@@ -8,7 +8,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_name: str = "FINALX Gmail Auto Risk Marker"
+    app_name: str = "Inbox Sentry"
     api_prefix: str = "/api"
     api_token: str | None = None
 
@@ -39,9 +39,9 @@ class Settings(BaseSettings):
 
     high_risk_threshold: int = Field(default=60, ge=1, le=100)
     medium_risk_threshold: int = Field(default=30, ge=1, le=100)
-    gmail_high_risk_label: str = "FINALX 高風險"
-    gmail_warning_label: str = "FINALX 中風險"
-    gmail_reason_label_prefix: str = "FINALX 理由"
+    gmail_high_risk_label: str = "Inbox Sentry 高風險"
+    gmail_warning_label: str = "Inbox Sentry 中風險"
+    gmail_reason_label_prefix: str = "Inbox Sentry 理由"
     label_medium_risk: bool = True
     enable_reason_labels: bool = True
     mark_starred: bool = False

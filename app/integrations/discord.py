@@ -50,8 +50,8 @@ class DiscordNotifier:
             if item.score_delta > 0 or item.status in {"malicious", "suspicious"}
         ][:4]
         return {
-            "username": "FINALX Gmail Auto",
-            "content": f"FINALX 偵測到 {decision.risk_level.upper()} 風險郵件",
+            "username": "Inbox Sentry",
+            "content": f"Inbox Sentry 偵測到 {decision.risk_level.upper()} 風險郵件",
             "embeds": [
                 {
                     "title": decision.subject or "(無主旨)",

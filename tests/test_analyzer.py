@@ -197,7 +197,7 @@ def test_subscription_billing_phishing_reaches_high_risk_without_llm():
     Netflix Account Update
     We were unable to process your monthly membership payment.
     To continue enjoying Netflix, please update your credit card details immediately.
-    Verify your details at https://netflix-payment-update.example.test/login.
+    Verify your details at https://netflix-payment-update.xiayue.tw/login.
     Failure to update your payment information will result in immediate termination of your subscription.
     """
 
@@ -211,7 +211,7 @@ def test_subscription_billing_phishing_reaches_high_risk_without_llm():
 def test_business_email_compromise_wire_request_reaches_high_risk_without_llm():
     disable_api_features()
     text = """
-    From: ceo-office@ceo-corporate-example.test
+    From: ceo-office@ceo-corporate-xiayue.tw
     Subject: URGENT REQUEST: Immediate wire transfer needed for project acquisition
     I am currently attending a confidential board meeting and cannot take any calls.
     Please prepare a wire transfer of $25,000 USD to the escrow bank account details attached in the file.

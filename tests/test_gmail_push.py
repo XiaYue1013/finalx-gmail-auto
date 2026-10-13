@@ -13,7 +13,7 @@ def _encode(value: dict) -> str:
 def test_decode_pubsub_push_payload():
     payload = {
         "message": {
-            "data": _encode({"emailAddress": "admin@example.test", "historyId": "12345"}),
+            "data": _encode({"emailAddress": "admin@xiayue.tw", "historyId": "12345"}),
             "messageId": "pubsub-1",
         },
         "subscription": "projects/demo/subscriptions/gmail-push",
@@ -21,13 +21,13 @@ def test_decode_pubsub_push_payload():
 
     decoded = decode_pubsub_push(payload)
 
-    assert decoded["emailAddress"] == "admin@example.test"
+    assert decoded["emailAddress"] == "admin@xiayue.tw"
     assert decoded["historyId"] == "12345"
     assert decoded["messageId"] == "pubsub-1"
 
 
 def test_decode_pubsub_push_rejects_missing_history_id():
-    payload = {"message": {"data": _encode({"emailAddress": "admin@example.test"})}}
+    payload = {"message": {"data": _encode({"emailAddress": "admin@xiayue.tw"})}}
 
     with pytest.raises(GmailPushDecodeError):
         decode_pubsub_push(payload)

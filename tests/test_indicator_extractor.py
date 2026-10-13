@@ -3,16 +3,16 @@ from app.analysis.indicator_extractor import IndicatorExtractor
 
 def test_extractor_does_not_treat_email_domains_or_filenames_as_urls():
     indicators = IndicatorExtractor().extract(
-        "From newsletter@techtrends.example.test, attachment windows_patch_update.js, "
-        "visit https://portal.example.test/login"
+        "From newsletter@techtrends.xiayue.tw, attachment windows_patch_update.js, "
+        "visit https://portal.xiayue.tw/login"
     )
 
     emails = {item.value for item in indicators if item.type == "email"}
     domains = {item.value for item in indicators if item.type == "domain"}
 
-    assert "newsletter@techtrends.example.test" in emails
-    assert "portal.example.test" in domains
-    assert "techtrends.example.test" not in domains
+    assert "newsletter@techtrends.xiayue.tw" in emails
+    assert "portal.xiayue.tw" in domains
+    assert "techtrends.xiayue.tw" not in domains
     assert "update.js" not in domains
 
 

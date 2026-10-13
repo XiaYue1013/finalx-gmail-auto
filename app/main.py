@@ -36,7 +36,7 @@ def require_api_token(
         return
     supplied_token = x_finalx_api_token or token
     if supplied_token != settings.api_token:
-        raise HTTPException(status_code=401, detail="Invalid FINALX API token.")
+        raise HTTPException(status_code=401, detail="Invalid Inbox Sentry API token.")
 
 
 async def _background_worker_loop() -> None:

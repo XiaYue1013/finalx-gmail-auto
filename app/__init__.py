@@ -1,2 +1,1 @@
-"""FINALX Gmail automation package."""
-
+"""Inbox Sentry email risk analysis package."""

@@ -22,7 +22,7 @@ TEST_EMAILS_3 = [
     {
         "id": 1,
         "type": "高風險 (High Risk - 政府退稅詐騙)",
-        "sender": "tax-refund@gov-portal-tax.example.test",
+        "sender": "tax-refund@gov-portal-tax.xiayue.tw",
         "subject": "通知：您有新台幣 12,500 元的個人所得稅退稅未領取",
         "body": """
         <html>
@@ -41,14 +41,14 @@ TEST_EMAILS_3 = [
     {
         "id": 2,
         "type": "中風險 (Medium Risk - Unicode 偽造混淆字元)",
-        "sender": "promotion@discounts-deal.example.test",
+        "sender": "promotion@discounts-deal.xiayue.tw",
         "subject": "【重要】𝖦𝖾𝗍 𝟧𝟢% 𝖮𝖿𝖿 on your next order - 𝖫𝗂𝗆𝗂𝗍𝖾𝖽 𝖳𝗂𝗆𝖾",
         "body": """
         <html>
         <body>
             <h3>𝖲𝗉𝖾𝖼𝗂𝖺𝗅 𝖮𝖿𝖿𝖾𝗋 for loyal customers!</h3>
             <p>We are offering 50% discount on all software licenses. Use promo code <b>HALFPRICE</b> at checkout.</p>
-            <p>Click here to buy: <a href="http://discounts-deal.example.test/buy">Buy Software Now</a></p>
+            <p>Click here to buy: <a href="http://discounts-deal.xiayue.tw/buy">Buy Software Now</a></p>
         </body>
         </html>
         """
@@ -73,7 +73,7 @@ TEST_EMAILS_3 = [
     {
         "id": 4,
         "type": "高風險 (High Risk - 巨集啟用試算表 / 潛在惡意 VBA 巨集)",
-        "sender": "reports@corp-accounting.example.test",
+        "sender": "reports@corp-accounting.xiayue.tw",
         "subject": "CONFIDENTIAL: Q1 Financial Performance & Audit Reports",
         "body": """
         <html>
@@ -90,7 +90,7 @@ TEST_EMAILS_3 = [
     {
         "id": 5,
         "type": "中風險 (Medium Risk - 可疑的跳轉 Redirect 連結)",
-        "sender": "no-reply@social-network.example.test",
+        "sender": "no-reply@social-network.xiayue.tw",
         "subject": "You have 3 new notifications waiting on your feed",
         "body": """
         <html>
@@ -123,7 +123,7 @@ TEST_EMAILS_3 = [
     {
         "id": 7,
         "type": "高風險 (High Risk - MFA 驗證釣魚)",
-        "sender": "auth-security@microsoft-mfa.example.test",
+        "sender": "auth-security@microsoft-mfa.xiayue.tw",
         "subject": "Action Required: Re-authenticate your Multi-Factor Authentication (MFA) immediately",
         "body": """
         <html>
@@ -139,7 +139,7 @@ TEST_EMAILS_3 = [
     {
         "id": 8,
         "type": "安全 (Low Risk)",
-        "sender": "gitlab@example.test",
+        "sender": "gitlab@xiayue.tw",
         "subject": "Re: GitLab Issue #42: Bug in Gmail Watch refresh task",
         "body": """
         <html>
@@ -148,7 +148,7 @@ TEST_EMAILS_3 = [
             <blockquote style="border-left: 3px solid #0052cc; padding-left: 10px; color: #555;">
                 "I investigated the token expiration logic. The token is successfully refreshed now using credentials.json. Let's merge the branch."
             </blockquote>
-            <p>View issue thread: <a href="https://gitlab.example.test/issues/42">GitLab Issue #42</a></p>
+            <p>View issue thread: <a href="https://gitlab.xiayue.tw/issues/42">GitLab Issue #42</a></p>
         </body>
         </html>
         """
@@ -156,7 +156,7 @@ TEST_EMAILS_3 = [
     {
         "id": 9,
         "type": "高風險 (High Risk - CEO 社交工程詐騙)",
-        "sender": "ceo-office@ceo-corporate-example.test",
+        "sender": "ceo-office@ceo-corporate-xiayue.tw",
         "subject": "URGENT REQUEST: Immediate wire transfer needed for project acquisition",
         "body": """
         <html>
@@ -174,7 +174,7 @@ TEST_EMAILS_3 = [
     {
         "id": 10,
         "type": "中風險 (Medium Risk - 求職行銷詐騙)",
-        "sender": "recruiter@job-search.example.test",
+        "sender": "recruiter@job-search.xiayue.tw",
         "subject": "Work from home job opportunity: Earn up to $3000/week part-time",
         "body": """
         <html>

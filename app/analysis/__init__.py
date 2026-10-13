@@ -1,2 +1,1 @@
-"""Risk analysis modules adapted from the original FINALX project."""
-
+"""Risk analysis modules for Inbox Sentry."""

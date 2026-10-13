@@ -1,13 +1,13 @@
 const DEFAULT_API_BASE_URL = 'http://127.0.0.1:8008';
 
 function buildHomepage() {
-  return buildCard_('FINALX Gmail Auto', '開啟 Dashboard 或設定 API 位址。', false);
+  return buildCard_('Inbox Sentry', '開啟 Dashboard 或設定 API 位址。', false);
 }
 
 function buildContextualCard(e) {
   const message = currentMessage_(e);
   const analysis = analyzeMessage_(message);
-  return buildCard_('FINALX 郵件審核', '目前郵件的即時風險分析與人工標註。', true, e, message, analysis);
+  return buildCard_('Inbox Sentry 郵件審核', '目前郵件的即時風險分析與人工標註。', true, e, message, analysis);
 }
 
 function buildCard_(title, subtitle, includeFeedback, e, message, analysis) {

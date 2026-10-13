@@ -14,7 +14,7 @@ from app.store import MongoStateStore
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="FINALX Gmail automatic risk marker")
+    parser = argparse.ArgumentParser(description="Inbox Sentry email risk analyzer")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     subparsers.add_parser("auth", help="Run Gmail OAuth flow and store token.json")
@@ -61,7 +61,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command in {"worker", "poll"}:
         print(
-            "FINALX Gmail 輪詢 fallback 已啟動：會持續掃描 Gmail，"
+            "Inbox Sentry Gmail polling is running; scanning Gmail continuously, "
             f"每 {settings.gmail_poll_seconds} 秒掃描一次，"
             f"高風險信件會自動加上「{settings.gmail_high_risk_label}」標籤。"
         )
@@ -71,7 +71,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "auto":
         from uvicorn import run
 
-        print("FINALX Gmail Push webhook API 啟動中：請讓 Cloud Pub/Sub push 到 /api/gmail/push。")
+        print("Inbox Sentry webhook API is starting; configure Cloud Pub/Sub to push to /api/gmail/push.")
         run("app.main:app", host="127.0.0.1", port=8008, reload=False)
         return 0
 

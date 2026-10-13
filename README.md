@@ -1,144 +1,79 @@
-# FINALX Gmail Auto
+# Inbox Sentry
 
-An event-driven Gmail security assistant that analyzes newly received messages, assigns an explainable risk score, and applies Gmail labels to suspicious or high-risk email.
+Inbox Sentry is a small email threat triage project. It looks for phishing signals in a message, explains the evidence behind its risk score, and can label high-risk mail in Gmail.
 
-## Features
+The analyzer can also run on pasted text, so you can try the core project without connecting a mailbox or sharing email credentials.
 
-- Gmail Push Notifications through Google Cloud Pub/Sub.
-- Gmail History API processing for newly added inbox messages.
-- Parsing of sender headers, Reply-To, SPF, DKIM, DMARC, links, and attachments.
-- Multilingual SetFit classification: `legitimate`, `suspicious`, or `threat`.
-- Explainable scoring from ML, URL structure, attachments, sender authentication, reputation, rules, and optional threat-intelligence APIs.
-- Gmail labels for high-risk, medium-risk, and primary reason.
-- MongoDB state, scan events, sender reputation, feedback, threat cache, and retry queue.
-- FastAPI endpoints and a built-in dashboard.
-- Human feedback review and approved training-data workflow.
-- Optional Discord notifications and Gmail Add-on example.
+## Try it locally
 
-## Architecture
-
-```text
-Gmail inbox
-    │
-    ▼
-Gmail Watch ──► Cloud Pub/Sub ──► POST /api/gmail/push
-                                      │
-                                      ▼
-                                Gmail History API
-                                      │
-                                      ▼
-                              Message parser and analyzer
-                              ├─ SetFit classifier
-                              ├─ sender authentication
-                              ├─ URL and attachment checks
-                              ├─ optional threat intelligence
-                              └─ rules fallback
-                                      │
-                         ┌────────────┴────────────┐
-                         ▼                         ▼
-                    Gmail labels               MongoDB
-                                            dashboard/events
-```
-
-## Requirements
-
-- Python 3.11+
-- MongoDB
-- Google Cloud project with Gmail API and Pub/Sub enabled
-- Gmail OAuth desktop client
-
-The SetFit model and runtime data are intentionally not committed.
-
-## Setup
+Requires Python 3.11 or newer.
 
 ```bash
+git clone https://github.com/XiaYue1013/inbox-sentry.git
+cd inbox-sentry
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Set at least:
+For a quick, offline-friendly walkthrough, turn off optional model and threat-intelligence lookups in `.env`:
 
 ```env
-MONGODB_URI=mongodb://127.0.0.1:27017/
-MONGODB_DATABASE=finalx_gmail_auto
+ENABLE_EXTERNAL_THREAT_LOOKUPS=false
+ENABLE_SETFIT_CLASSIFIER=false
+ENABLE_LLM_INTENT_CLASSIFIER=false
 ```
 
-For Gmail Push, also set:
+Analyze a sample without contacting Gmail:
 
-```env
-GMAIL_WATCH_TOPIC_NAME=projects/YOUR_PROJECT/topics/YOUR_TOPIC
+```bash
+./run.sh analyze-text "Your account will be suspended today. Verify your password at http://example.test/login"
 ```
 
-Download the OAuth desktop-client JSON from Google Cloud Console, place it in the repository root as `credentials.json`, and authorize:
+The command prints a JSON report with the risk level, score, explanation, indicators, and recommended next steps. Analysis is local in this mode; no Gmail account or API keys are required.
+
+## What it does
+
+- Checks message text and URLs for phishing patterns, impersonation, suspicious reply-to addresses, failed sender authentication, and risky attachments.
+- Combines explainable rules with optional multilingual SetFit classification and external threat-intelligence lookups.
+- Returns evidence and recommendations alongside a risk score, so a reviewer can see why a message was flagged.
+- Can monitor Gmail and apply a label to high-risk messages. Gmail integration is opt-in and requires OAuth setup.
+- Includes a FastAPI dashboard, feedback review flow, MongoDB-backed history, and optional Discord notifications.
+
+## Connect Gmail (optional)
+
+Create a Google Cloud OAuth desktop client with the Gmail API enabled, save its client file as `credentials.json`, then run:
 
 ```bash
 ./run.sh auth
-./run.sh watch
+./run.sh dry-run
 ```
 
-## Model
+`dry-run` analyzes messages without changing Gmail labels. After reviewing the results and configuring the desired monitoring mode, `./run.sh scan` applies the high-risk label. Push monitoring additionally needs a Google Cloud Pub/Sub topic and a reachable webhook.
 
-Train the local multilingual SetFit model:
+## Configuration
 
-```bash
-./run.sh train-setfit
-```
+Copy `.env.example` to `.env`. The local text analyzer works without credentials. Optional integrations are disabled or skipped when their credentials are absent. SetFit model files are generated locally and are not included in this repository.
 
-The generated model is stored under `data/models/` and excluded from Git.
+Useful commands:
 
-## Run
+| Command | Purpose |
+| --- | --- |
+| `./run.sh analyze-text "..."` | Analyze text without Gmail |
+| `./run.sh dry-run` | Preview Gmail scan results without applying labels |
+| `./run.sh scan` | Scan Gmail and label high-risk messages |
+| `./run.sh api` | Start the local API and dashboard at `http://127.0.0.1:8008` |
+| `./run.sh test` | Run the project test suite |
 
-```bash
-./run.sh api
-```
-
-Open:
+## Project map
 
 ```text
-http://127.0.0.1:8008/dashboard
+app/analysis/    Risk scoring, URL checks, threat intelligence, classifiers
+app/gmail/       Gmail authorization, message parsing, scanning, and labels
+app/main.py      FastAPI endpoints and dashboard integration
+gmail_addon/     Optional Google Apps Script sidebar template
+tests/           Unit and integration tests
 ```
 
-For a public deployment, expose the API through HTTPS and configure the Pub/Sub push subscription to:
-
-```text
-https://YOUR_PUBLIC_DOMAIN/api/gmail/push
-```
-
-## Test
-
-```bash
-./run.sh test
-./run.sh evaluate
-./run.sh evaluate-setfit
-```
-
-The repository includes unit tests, regression email templates, and a held-out challenge fixture. Test results should not be interpreted as a production-world accuracy guarantee.
-
-## Demo
-
-Preview the test messages without writing to Gmail:
-
-```bash
-./record_demo.sh --fast --dry-run
-```
-
-Run the guided Gmail demo:
-
-```bash
-FINALX_PUBLIC_URL=https://YOUR_PUBLIC_DOMAIN ./record_demo.sh
-```
-
-## Optional integrations
-
-External threat-intelligence keys, Gemini, Discord, and the Gmail Add-on are optional. Leave their environment variables empty to disable those integrations.
-
-## Security notes
-
-- Never commit `.env`, OAuth credentials, `token.json`, API keys, MongoDB data, logs, or trained models.
-- Protect public management APIs with `API_TOKEN`.
-- For production, validate Pub/Sub OIDC tokens instead of relying only on a query-string push token.
-- Use a durable queue/worker before acknowledging Pub/Sub messages in production.
-- Review the privacy impact before sending email URLs or text to third-party services.
-
+This is a learning and portfolio project, not a guaranteed phishing detector. Treat its results as triage signals and review suspicious messages before taking action.

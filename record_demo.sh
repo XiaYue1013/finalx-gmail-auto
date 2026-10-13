@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON="$ROOT_DIR/.venv/bin/python"
 UVICORN="$ROOT_DIR/.venv/bin/uvicorn"
 LOCAL_URL="${FINALX_LOCAL_URL:-http://127.0.0.1:8008}"
-PUBLIC_URL="${FINALX_PUBLIC_URL:-https://public.example.test}"
+PUBLIC_URL="${FINALX_PUBLIC_URL:-https://gm-push.xiayue.tw}"
 API_LOG="$ROOT_DIR/data/demo-api.log"
 API_TOKEN_VALUE=""
 

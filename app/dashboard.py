@@ -7,7 +7,7 @@ DASHBOARD_HTML = """
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FINALX Gmail Auto Dashboard</title>
+  <title>Inbox Sentry Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
@@ -19,7 +19,7 @@ DASHBOARD_HTML = """
   <header class="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
     <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-4 lg:flex-row lg:items-center lg:justify-between">
       <div>
-        <h1 class="text-2xl font-black tracking-normal">FINALX Gmail Auto Dashboard</h1>
+        <h1 class="text-2xl font-black tracking-normal">Inbox Sentry Dashboard</h1>
         <p id="updated" class="mt-1 text-sm text-slate-500">loading</p>
       </div>
       <div class="flex flex-wrap gap-2">
@@ -116,7 +116,7 @@ DASHBOARD_HTML = """
       }
       const res = await fetch(path, {...options, headers});
       if (res.status === 401 && allowTokenPrompt) {
-        const nextToken = prompt('請輸入 FINALX API Token', currentApiToken());
+        const nextToken = prompt('請輸入 Inbox Sentry API Token', currentApiToken());
         if (nextToken !== null) {
           saveApiToken(nextToken);
           return api(path, options, false);
@@ -137,7 +137,7 @@ DASHBOARD_HTML = """
     }
 
     function setApiToken() {
-      const nextToken = prompt('設定 FINALX API Token；留空會清除。', currentApiToken());
+      const nextToken = prompt('設定 Inbox Sentry API Token；留空會清除。', currentApiToken());
       if (nextToken === null) return;
       saveApiToken(nextToken);
       loadAll().catch((err) => {
@@ -201,8 +201,8 @@ DASHBOARD_HTML = """
       const fpRate = Math.round((feedback.false_positive_rate || 0) * 1000) / 10;
       const items = [
         ['掃描事件', data.events?.total ?? 0, '全部 MongoDB scan_events'],
-        ['高風險標記', actions.marked ?? 0, '已套用 FINALX 高風險'],
-        ['中風險警告', actions.warned ?? 0, '已套用 FINALX 中風險'],
+        ['高風險標記', actions.marked ?? 0, '已套用 Inbox Sentry 高風險'],
+        ['中風險警告', actions.warned ?? 0, '已套用 Inbox Sentry 中風險'],
         ['誤判率', fpRate + '%', `${feedback.false_positive_count || 0}/${feedback.reviewed_count || 0} approved`],
         ['Cache', `${cache.total ?? 0}/${cache.max_entries ?? 0}`, `hit ${cache.hit_count ?? 0}`],
         ['Queue', `${queue.total ?? 0}/${queue.max_entries ?? 0}`, `seen ${queue.seen_count ?? 0}`],

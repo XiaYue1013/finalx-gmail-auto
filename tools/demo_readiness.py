@@ -32,6 +32,9 @@ def main() -> int:
 
     checks = [
         check_file("README.md"),
+        check_file("FINALX Gmail Auto.pptx"),
+        check_file("PROJECT_OPERATION_AND_IMPROVEMENTS.md"),
+        check_file("PRESENTATION_LLM_OUTLINE.md"),
         check_file(".env.example"),
         check_optional_file(".env"),
         check_credentials(),
